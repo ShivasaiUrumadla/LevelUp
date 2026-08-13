@@ -1,4 +1,5 @@
 backend/.env
 backend/__pycache__/
+habit-hue-buddy/.env
 habit-hue-buddy/node_modules/
 habit-hue-buddy/dist/
