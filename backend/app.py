@@ -15,9 +15,10 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = "shiva"
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
 
-
-CORS(app)
-
+CORS(app, origins=[
+    "http://localhost:5173",
+    "https://YOUR-VERCEL-URL.vercel.app"
+])
 jwt = JWTManager(app)
 
 db = SQLAlchemy(app)
