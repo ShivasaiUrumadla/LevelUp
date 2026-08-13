@@ -17,7 +17,7 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
 
 CORS(app, origins=[
     "http://localhost:5173",
-    "https://YOUR-VERCEL-URL.vercel.app"
+    "https://level-8ncrbsngx-shivasaiurumadla.vercel.app"
 ])
 jwt = JWTManager(app)
 
