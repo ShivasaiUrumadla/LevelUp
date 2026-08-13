@@ -19,8 +19,8 @@ from flask_cors import CORS
 
 CORS(
     app,
-    origins=[r"https://.*\.vercel\.app", "http://localhost:5173"],
-    supports_credentials=True,
+    origins=r"https://.*\.vercel\.app",
+    supports_credentials=True
 )
 jwt = JWTManager(app)
 
