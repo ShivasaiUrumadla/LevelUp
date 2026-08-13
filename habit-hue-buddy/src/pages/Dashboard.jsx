@@ -215,7 +215,7 @@
             
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {tasks.map((task)=>(
-                    <TaskCard key={task.id} task={task} value={balance[task.id] ?? -task.target} onIncrement={()=>increaseProgress(task.id)} onDecrement={()=>decreaseProgress(task.id)} onDelete={()=>deleteTask(task.id)} />
+                    <TaskCard key={task.id} task={task} value={balance[task.id] ?? task.target} onIncrement={()=>increaseProgress(task.id)} onDecrement={()=>decreaseProgress(task.id)} onDelete={()=>deleteTask(task.id)} />
                   ))}
                   
                 
