@@ -4,18 +4,20 @@ import { Mail, Lock } from "lucide-react";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("login submit", { email, password });
     verify_login(email, password);
 
   };
+  const API = import.meta.env.VITE_API_URL;
 
   const navigate = useNavigate();
 
   async function verify_login(email, password) {
     try {
-        const response = await fetch("http://127.0.0.1:5000/login", {
+        const response = await fetch(`${API}/login`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({

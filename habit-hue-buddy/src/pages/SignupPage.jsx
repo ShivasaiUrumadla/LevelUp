@@ -7,6 +7,7 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState("");
+  const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ export default function SignupPage() {
 
   async function verify_signup(name,mail,pass){
     try{
-      const response = await fetch("http://127.0.0.1:5000/signup",{
+      const response = await fetch(`${API}/signup`,{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({
