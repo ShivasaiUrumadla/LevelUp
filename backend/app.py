@@ -19,7 +19,11 @@ from flask_cors import CORS
 
 CORS(
     app,
-    origins=r"https://.*\.vercel\.app",
+    origins=[
+        r"http://localhost:\d+",
+        r"http://127\.0\.0\.1:\d+",
+        r"https://.*\.vercel\.app"
+    ],
     supports_credentials=True
 )
 jwt = JWTManager(app)
@@ -126,7 +130,8 @@ def get_tasks():
             "title": task.title,
             "target": task.target,
             "unit": task.unit,
-            "created_at": task.created_at
+            "created_at": task.created_at,
+            "user":task.user_id
         })
 
     return jsonify(result)
