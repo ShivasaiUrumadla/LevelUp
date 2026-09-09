@@ -153,7 +153,7 @@
     // update displayed balance
     setBalance(prev => ({
       ...prev,
-      [taskId]: (prev[taskId] ?? -task.target) - 1
+      [taskId]: (prev[taskId] ?? -task.target) + 10
     }));
 
     // save today's progress to backend
